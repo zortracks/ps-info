@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zortracks.PsInfo.Apis.Host", "src\Zortracks.PsInfo.Apis.Host\Zortracks.PsInfo.Apis.Host.csproj", "{667F634B-F407-3484-0572-B886AAE084FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zortracks.PsInfo.AppHost", "Zortracks.PsInfo.AppHost\Zortracks.PsInfo.AppHost.csproj", "{A5FD0B5B-4BDE-4317-B451-CBA37A5235D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zortracks.PsInfo.ServiceDefaults", "Zortracks.PsInfo.ServiceDefaults\Zortracks.PsInfo.ServiceDefaults.csproj", "{8F57648F-BAEE-77CF-2D0D-A7F484BFE2AF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{667F634B-F407-3484-0572-B886AAE084FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{667F634B-F407-3484-0572-B886AAE084FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{667F634B-F407-3484-0572-B886AAE084FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{667F634B-F407-3484-0572-B886AAE084FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5FD0B5B-4BDE-4317-B451-CBA37A5235D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5FD0B5B-4BDE-4317-B451-CBA37A5235D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5FD0B5B-4BDE-4317-B451-CBA37A5235D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5FD0B5B-4BDE-4317-B451-CBA37A5235D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F57648F-BAEE-77CF-2D0D-A7F484BFE2AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F57648F-BAEE-77CF-2D0D-A7F484BFE2AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F57648F-BAEE-77CF-2D0D-A7F484BFE2AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F57648F-BAEE-77CF-2D0D-A7F484BFE2AF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{667F634B-F407-3484-0572-B886AAE084FA} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4EE2B6DC-A44D-4E97-AA80-91CC3DCCE3B6}
+	EndGlobalSection
+EndGlobal
