@@ -399,3 +399,4 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/aspire/Zortracks.PsInfo.AppHost/aspirate-output/image-pull-secret.yaml
