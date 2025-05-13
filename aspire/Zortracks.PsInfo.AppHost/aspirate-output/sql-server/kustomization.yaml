@@ -1,7 +1,6 @@
 resources:
 - statefulset.yaml
 - service.yaml
-- persistent-volume.yaml
 
 generatorOptions:
   disableNameSuffixHash: true
