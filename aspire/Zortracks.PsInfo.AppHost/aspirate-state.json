@@ -1,5 +1,6 @@
 {
   "projectPath": ".",
+  "inputPath": "aspirate-output",
   "outputPath": "aspirate-output",
   "namespace": "ps-info",
   "containerRegistry": "registry.versonium.cloud",
@@ -9,6 +10,7 @@
   "imagePullPolicy": "Always",
   "containerBuilder": "docker",
   "containerRepositoryPrefix": "ps-info",
+  "kubeContext": "kubernetes-admin@kubernetes",
   "outputFormat": "kustomize",
   "skipFinalKustomizeGeneration": false,
   "privateRegistryUrl": "registry.versonium.cloud",
