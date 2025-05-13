@@ -19,6 +19,7 @@ namespace Zortracks.PsInfo.Application.Host {
                 configure.SnackbarConfiguration.PositionClass = Defaults.Classes.Position.BottomLeft;
             });
             builder.Services.AddRazorComponents().AddInteractiveServerComponents();
+            builder.Services.AddLocalization();
 
             /* ========= Build web application ========= */
             var app = builder.Build();
@@ -27,6 +28,7 @@ namespace Zortracks.PsInfo.Application.Host {
                 app.UseHsts();
             }
 
+            app.UseRequestLocalization();
             app.UseHttpsRedirection();
             app.UseAntiforgery();
             app.MapStaticAssets();

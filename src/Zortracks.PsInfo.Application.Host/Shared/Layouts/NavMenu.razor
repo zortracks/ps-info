@@ -2,11 +2,15 @@
 @using MudBlazor
 
 <MudHidden Breakpoint="Breakpoint.MdAndUp" Invert>
-    <MudMenu Color="Color.Primary" Label="Accueil" />
+    @foreach (var navigationElement in NavigationElements) {
+        <MudButton Href="@navigationElement.Href" Color="GetColorForMenu(navigationElement)">@navigationElement.Title</MudButton>
+    }
 </MudHidden>
 
 <MudHidden Breakpoint="Breakpoint.MdAndUp">
     <MudNavMenu>
-        <MudNavLink Href="./" Match="NavLinkMatch.All">Accueil</MudNavLink>
+        @foreach (var navigationElement in NavigationElements) {
+            <MudNavLink Href="@navigationElement.Href" Icon="@navigationElement.Icon" Match="NavLinkMatch.All">@navigationElement.Title</MudNavLink>
+        }
     </MudNavMenu>
 </MudHidden>
