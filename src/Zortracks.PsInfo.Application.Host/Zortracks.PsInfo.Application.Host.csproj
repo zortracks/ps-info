@@ -2,9 +2,13 @@
 
 	<PropertyGroup>
 		<TargetFramework>net9.0</TargetFramework>
+		<UserSecretsId>d0031780-8d3f-4d47-9ef4-ac64eb376bcd</UserSecretsId>
+		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+		<DockerfileContext>..\..</DockerfileContext>
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.2" />
 	  <PackageReference Include="MudBlazor" Version="8.6.0" />
 	</ItemGroup>
 
