@@ -22,8 +22,8 @@ spec:
       - name: image-pull-secret
       containers:
       - name: application
-        image: registry.versonium.cloud/ps-info/application:v0.0.1
-        imagePullPolicy: Always
+        image: registry.versonium.cloud/ps-info/application:v0.0.2
+        imagePullPolicy: IfNotPresent
         ports:
         - name: http
           containerPort: 8080

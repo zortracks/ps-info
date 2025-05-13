@@ -1,10 +1,22 @@
 {
-  "inputPath": "aspirate-output",
+  "projectPath": ".",
+  "outputPath": "aspirate-output",
+  "namespace": "ps-info",
+  "containerRegistry": "registry.versonium.cloud",
   "containerImageTags": [
-    "latest"
+    "v0.0.2"
   ],
-  "kubeContext": "kubernetes-admin@kubernetes",
-  "outputFormat": "docker",
+  "imagePullPolicy": "IfNotPresent",
+  "containerBuilder": "docker",
+  "containerRepositoryPrefix": "ps-info",
+  "outputFormat": "kustomize",
+  "skipFinalKustomizeGeneration": false,
+  "privateRegistryUrl": "registry.versonium.cloud",
+  "privateRegistryUsername": "zortracks",
+  "privateRegistryEmail": "aspir8@aka.ms",
+  "withPrivateRegistry": true,
+  "includeDashboard": true,
+  "useCustomNamespace": true,
   "secrets": {
     "salt": "ebU32QR8CQ09JdeC",
     "hash": "6tyDv5\u002Bfpz4wy6Dxxs9Yo/6WbiMQVRlUvVYOoFMn36k=",
@@ -21,5 +33,6 @@
       },
       "application": {}
     }
-  }
+  },
+  "processAllComponents": true
 }
