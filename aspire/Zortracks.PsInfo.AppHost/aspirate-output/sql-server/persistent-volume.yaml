@@ -10,4 +10,4 @@ spec:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
   hostPath:
-    path: "/mnt/persistent-volumnes/ps-info/sql-server-data"
+    path: "/var/persistent-volumnes/ps-info/sql-server-data"
