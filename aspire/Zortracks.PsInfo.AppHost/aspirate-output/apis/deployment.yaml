@@ -23,7 +23,7 @@ spec:
       containers:
       - name: apis
         image: registry.versonium.cloud/ps-info/apis:v0.0.2
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
         ports:
         - name: http
           containerPort: 8080
