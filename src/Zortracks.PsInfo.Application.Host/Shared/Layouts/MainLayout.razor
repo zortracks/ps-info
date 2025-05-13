@@ -1,0 +1,46 @@
+﻿@using Microsoft.AspNetCore.Components.Routing
+@using MudBlazor
+@inherits LayoutComponentBase
+
+<MudThemeProvider IsDarkMode />
+<MudPopoverProvider />
+<MudDialogProvider />
+<MudSnackbarProvider />
+
+<MudLayout>
+    <MudAppBar Elevation="1">
+        <MudHidden Breakpoint="Breakpoint.MdAndUp">
+            <MudIconButton Icon="@Icons.Material.Filled.Menu" OnClick="@(() => DrawerOpen = !DrawerOpen)" />
+        </MudHidden>
+
+        <MudText Typo="Typo.h5" Class="ml-3">PS-Info</MudText>
+
+        <MudSpacer />
+
+        <MudHidden Breakpoint="Breakpoint.MdAndUp" Invert>
+            <NavMenu />
+        </MudHidden>
+
+        <MudSpacer />
+    </MudAppBar>
+
+    <MudHidden Breakpoint="Breakpoint.MdAndUp">
+        <MudDrawer @bind-Open="DrawerOpen" ClipMode="DrawerClipMode.Always" Elevation="2">
+            <NavMenu />
+        </MudDrawer>
+    </MudHidden>
+
+    <MudMainContent>
+        @Body
+    </MudMainContent>
+</MudLayout>
+
+<div id="blazor-error-ui" data-nosnippet>
+    An unhandled error has occurred.
+    <a href="." class="reload">Reload</a>
+    <span class="dismiss">🗙</span>
+</div>
+
+@code {
+    private bool DrawerOpen { get; set; }
+}

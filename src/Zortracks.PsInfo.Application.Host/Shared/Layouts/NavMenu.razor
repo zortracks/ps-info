@@ -1,0 +1,12 @@
+﻿@using Microsoft.AspNetCore.Components.Routing
+@using MudBlazor
+
+<MudHidden Breakpoint="Breakpoint.MdAndUp" Invert>
+    <MudMenu Color="Color.Primary" Label="Accueil" />
+</MudHidden>
+
+<MudHidden Breakpoint="Breakpoint.MdAndUp">
+    <MudNavMenu>
+        <MudNavLink Href="./" Match="NavLinkMatch.All">Accueil</MudNavLink>
+    </MudNavMenu>
+</MudHidden>

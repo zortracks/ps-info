@@ -1,43 +1,25 @@
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.Identity.Web;
-using Microsoft.Identity.Abstractions;
-using Microsoft.Identity.Web.Resource;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Hosting;
 
-namespace Zortracks.PsInfo.Apis.Host;
+namespace Zortracks.PsInfo.Apis.Host {
 
-public class Program
-{
-    public static void Main(string[] args)
-    {
-        var builder = WebApplication.CreateBuilder(args);
-        builder.AddServiceDefaults();
+    public static class Program {
 
-        // Add services to the container.
-        builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-            .AddMicrosoftIdentityWebApi(builder.Configuration.GetSection("AzureAd"));
+        public static void Main(string[] args) {
+            /* ========= Configure web application ========= */
+            var builder = WebApplication.CreateBuilder(args);
 
-        builder.Services.AddControllers();
-        // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-        builder.Services.AddOpenApi();
+            // Core services
+            builder.AddServiceDefaults();
 
-        var app = builder.Build();
+            /* ========= Build web application ========= */
+            var app = builder.Build();
 
-        app.MapDefaultEndpoints();
+            app.MapDefaultEndpoints();
+            app.UseHttpsRedirection();
 
-        // Configure the HTTP request pipeline.
-        if (app.Environment.IsDevelopment())
-        {
-            app.MapOpenApi();
+            /* ========= Run web application ========= */
+            app.Run();
         }
-
-        app.UseHttpsRedirection();
-
-        app.UseAuthorization();
-
-
-        app.MapControllers();
-
-        app.Run();
     }
 }

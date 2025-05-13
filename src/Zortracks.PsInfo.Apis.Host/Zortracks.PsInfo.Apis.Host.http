@@ -1,6 +1,0 @@
-@Zortracks.PsInfo.Apis.Host_HostAddress = http://localhost:5103
-
-GET {{Zortracks.PsInfo.Apis.Host_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

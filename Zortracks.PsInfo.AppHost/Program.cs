@@ -1,5 +1,17 @@
-var builder = DistributedApplication.CreateBuilder(args);
+using Aspire.Hosting;
 
-builder.AddProject<Projects.Zortracks_PsInfo_Apis_Host>("zortracks-psinfo-apis-host");
+namespace Zortracks.PsInfo.AppHost {
 
-builder.Build().Run();
+    public static class Program {
+
+        public static void Main(string[] args) {
+            var builder = DistributedApplication.CreateBuilder(args);
+
+            SqlServer.Configure(builder);
+            Apis.Configure(builder);
+            Application.Configure(builder);
+
+            builder.Build().Run();
+        }
+    }
+}
