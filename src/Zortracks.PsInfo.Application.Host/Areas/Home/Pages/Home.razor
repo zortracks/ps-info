@@ -6,7 +6,7 @@
 
 <PageTitle>PS-Info</PageTitle>
 
-<MudCarousel TData="object" Style="height: 650px" ShowArrows ShowBullets AutoCycle>
+<MudCarousel TData="object" Style="height: 650px" ShowArrows ShowBullets AutoCycle EnableSwipeGesture="false">
     @foreach (var homeCarouselDataHolder in HomeCarouselDataHolders) {
         <MudCarouselItem Color="@homeCarouselDataHolder.Color">
             <MudGrid Class="mud-height-full" Spacing="0">

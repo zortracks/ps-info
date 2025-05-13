@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+  name: application
+  namespace: ps-info
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - ps-info.ddns.net
+    secretName: application-tls
+  rules:
+  - host: ps-info.ddns.net
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: application
+            port:
+              number: 8080
