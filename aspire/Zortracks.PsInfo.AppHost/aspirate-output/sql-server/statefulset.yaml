@@ -21,7 +21,7 @@ spec:
       containers:
         - name: sql-server
           image: mcr.microsoft.com/mssql/server:2022-latest
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           ports:
             - containerPort: 1433
           envFrom:
@@ -30,11 +30,11 @@ spec:
             - secretRef:
                 name: sql-server-secrets
           volumeMounts:
-            - name: zortracks-psinfo-apphost-09e125ffce-sql-server-data
+            - name: sql-server-data
               mountPath: /var/opt/mssql
   volumeClaimTemplates:
     - metadata:
-        name: zortracks-psinfo-apphost-09e125ffce-sql-server-data
+        name: sql-server-data
       spec:
         accessModes: ["ReadWriteOnce"]
         resources:

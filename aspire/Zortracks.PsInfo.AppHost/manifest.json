@@ -7,7 +7,7 @@
       "image": "mcr.microsoft.com/mssql/server:2022-latest",
       "volumes": [
         {
-          "name": "zortracks.psinfo.apphost-09e125ffce-sql-server-data",
+          "name": "sql-server-data",
           "target": "/var/opt/mssql",
           "readOnly": false
         }
@@ -25,9 +25,9 @@
         }
       }
     },
-    "pfsinfo": {
+    "sql-database": {
       "type": "value.v0",
-      "connectionString": "{sql-server.connectionString};Initial Catalog=pfsinfo"
+      "connectionString": "{sql-server.connectionString};Initial Catalog=psinfo"
     },
     "apis": {
       "type": "project.v0",
@@ -38,7 +38,7 @@
         "OTEL_DOTNET_EXPERIMENTAL_OTLP_RETRY": "in_memory",
         "ASPNETCORE_FORWARDEDHEADERS_ENABLED": "true",
         "HTTP_PORTS": "{apis.bindings.http.targetPort}",
-        "ConnectionStrings__pfsinfo": "{pfsinfo.connectionString}"
+        "ConnectionStrings__sql-database": "{sql-database.connectionString}"
       },
       "bindings": {
         "http": {

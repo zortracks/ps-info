@@ -6,7 +6,7 @@
   "containerImageTags": [
     "v0.0.2"
   ],
-  "imagePullPolicy": "IfNotPresent",
+  "imagePullPolicy": "Always",
   "containerBuilder": "docker",
   "containerRepositoryPrefix": "ps-info",
   "outputFormat": "kustomize",
@@ -29,9 +29,11 @@
       },
       "pfsinfo": {},
       "apis": {
-        "ConnectionStrings__pfsinfo": "ebU32QR8CQ09JdeC160s3oXDAJW6mFVeSREWX3IEDMvYLlIVqnddrDryGRcU/bRyARVBtcOOya6IpmGiRvzppfFml15ZS8XyywsQP8THEb0Lnoe\u002B9Yu0qckdjD6R2ZQB7Q8dyR/\u002B/iKinNjpbckzsPVw2TVdgoY9QveRNSuQiqQ5MMnwAKnwTDumIQ9tOxSouw=="
+        "ConnectionStrings__pfsinfo": "ebU32QR8CQ09JdeC160s3oXDAJW6mFVeSREWX3IEDMvYLlIVqnddrDryGRcU/bRyARVBtcOOya6IpmGiRvzppfFml15ZS8XyywsQP8THEb0Lnoe\u002B9Yu0qckdjD6R2ZQB7Q8dyR/\u002B/iKinNjpbckzsPVw2TVdgoY9QveRNSuQiqQ5MMnwAKnwTDumIQ9tOxSouw==",
+        "ConnectionStrings__sql-database": "ebU32QR8CQ09JdeCMEKB68hBWOCUWL/AxIdoi3IEDMvYLlIVqnddrDryGRcU/bRyARVBtcOOya6IpmGiRvzppfFml15ZS8XyywsQP8THEb0Lnoe\u002B9Yu0qckdjD6R2ZQB7Q8dyR/\u002B/iKinNjpbckzsPVw2TVdgoY9QveRNSuQiqQ5MMnwAKnwTDumIRp3PByh"
       },
-      "application": {}
+      "application": {},
+      "sql-database": {}
     }
   },
   "processAllComponents": true
