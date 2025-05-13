@@ -3,6 +3,7 @@ using Microsoft.Extensions.Localization;
 using MudBlazor;
 using System;
 using System.Collections.Generic;
+using Zortracks.PsInfo.Application.Host.Shared.DataHolders;
 using Zortracks.PsInfo.Application.Host.Shared.Resources;
 
 namespace Zortracks.PsInfo.Application.Host.Shared.Layouts {

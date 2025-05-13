@@ -13,6 +13,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Areas\Home\Resources\HomeLocalizations.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>HomeLocalizations.resx</DependentUpon>
+	  </Compile>
 	  <Compile Update="Shared\Resources\NavMenuLocalizations.Designer.cs">
 	    <DesignTime>True</DesignTime>
 	    <AutoGen>True</AutoGen>
@@ -21,6 +26,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <EmbeddedResource Update="Areas\Home\Resources\HomeLocalizations.resx">
+	    <Generator>PublicResXFileCodeGenerator</Generator>
+	    <LastGenOutput>HomeLocalizations.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
 	  <EmbeddedResource Update="Shared\Resources\NavMenuLocalizations.resx">
 	    <Generator>PublicResXFileCodeGenerator</Generator>
 	    <LastGenOutput>NavMenuLocalizations.Designer.cs</LastGenOutput>
