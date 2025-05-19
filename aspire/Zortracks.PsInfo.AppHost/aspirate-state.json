@@ -19,7 +19,18 @@
   "secrets": {
     "salt": "onnLqfJH/3GVsFUS",
     "hash": "YIvXXOUqBedJ\u002BpIGb4/hAXZ9HsR5e25Q5YVV58r1Waw=",
-    "secrets": {}
+    "secrets": {
+      "mysql-server-password": {
+        "value": "onnLqfJH/3GVsFUSfpnvwJWaLf7TmcbZP5mdVF86xkXAGp\u002BF4IJq3BMnUm5RR9Kbx7I="
+      },
+      "mysql-server": {},
+      "mysql-server-phpmyadmin": {},
+      "ps-info-database": {},
+      "apis": {
+        "ConnectionStrings__ps-info-database": "onnLqfJH/3GVsFUSgdKQeCeZuzMT1zo2mNJg8GkYwgvnEOq5\u002BL5q\u002BUgwVntSesKT/OiLOQznk9WfhS55RRfweeVmls\u002B0K5TQ3Wn4Jff/r63XmrNzrUfmwVtvYdKpcFv9cSbTsQmv4Z95ynYBVvOhrsvyCRLMLj4="
+      },
+      "application": {}
+    }
   },
   "processAllComponents": true
 }

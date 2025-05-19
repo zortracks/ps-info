@@ -1,0 +1,33 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql-server-phpmyadmin
+  labels:
+    app: mysql-server-phpmyadmin
+spec:
+  minReadySeconds: 60
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql-server-phpmyadmin
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: mysql-server-phpmyadmin
+    spec:
+      imagePullSecrets:
+      - name: image-pull-secret
+      containers:
+      - name: mysql-server-phpmyadmin
+        image: docker.io/library/phpmyadmin:5.2
+        imagePullPolicy: IfNotPresent
+        ports:
+        - name: http
+          containerPort: 80
+        envFrom:
+        - configMapRef:
+            name: mysql-server-phpmyadmin-env
+      terminationGracePeriodSeconds: 180

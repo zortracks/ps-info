@@ -1,6 +1,8 @@
 namespace: ps-info
 
 resources:
+- mysql-server
+- mysql-server-phpmyadmin
 - apis
 - application
 - namespace.yaml

@@ -1,0 +1,14 @@
+resources:
+- statefulset.yaml
+- service.yaml
+
+generatorOptions:
+  disableNameSuffixHash: true
+
+configMapGenerator:
+- name: mysql-server-env
+  literals:
+    - MYSQL_ROOT_PASSWORD=eGv8BxHQaOqIvdaguXb3k5
+    - OTEL_EXPORTER_OTLP_ENDPOINT=http://aspire-dashboard:18889
+    - OTEL_SERVICE_NAME=mysql-server
+

@@ -1,0 +1,40 @@
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: mysql-server
+  labels:
+    app: mysql-server
+spec:
+  serviceName: "mysql-server"
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql-server
+  template:
+    metadata:
+      labels:
+        app: mysql-server
+    spec:
+      imagePullSecrets:
+        - name: image-pull-secret
+      containers:
+        - name: mysql-server
+          image: docker.io/library/mysql:9.3
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3306
+          envFrom:
+            - configMapRef:
+                name: mysql-server-env
+          volumeMounts:
+            - name: mysql-data
+              mountPath: /var/lib/mysql
+  volumeClaimTemplates:
+    - metadata:
+        name: mysql-data
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 1Gi
