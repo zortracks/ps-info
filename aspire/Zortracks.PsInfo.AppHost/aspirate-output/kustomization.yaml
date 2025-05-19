@@ -1,0 +1,12 @@
+namespace: ps-info
+
+resources:
+- application
+- namespace.yaml
+- image-pull-secret.yaml
+- dashboard.yaml
+
+generatorOptions:
+  disableNameSuffixHash: true
+
+
