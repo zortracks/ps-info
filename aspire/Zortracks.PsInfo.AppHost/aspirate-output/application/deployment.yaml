@@ -22,7 +22,7 @@ spec:
       - name: image-pull-secret
       containers:
       - name: application
-        image: registry.versonium.cloud/ps-info/application:v0.1.1
+        image: registry.versonium.cloud/ps-info/application:v0.1.2
         imagePullPolicy: IfNotPresent
         ports:
         - name: http
