@@ -1,0 +1,55 @@
+﻿@page "/"
+
+@using Microsoft.AspNetCore.Components.Web
+@using MudBlazor
+@using Zortracks.PsInfo.Application.Host.Areas.Home.Resources
+
+<PageTitle>PS-Info</PageTitle>
+
+<MudCarousel TData="object" Style="height: 650px" ShowArrows ShowBullets AutoCycle EnableSwipeGesture="false">
+    @foreach (var homeCarouselDataHolder in HomeCarouselDataHolders) {
+        <MudCarouselItem Color="@homeCarouselDataHolder.Color">
+            <MudGrid Class="mud-height-full" Spacing="0">
+                <MudHidden Breakpoint="Breakpoint.MdAndDown">
+                    <MudItem md="5">
+                        <MudImage Class="mud-width-full" Src="@homeCarouselDataHolder.ImageUrl" ObjectFit="ObjectFit.Cover" ObjectPosition="ObjectPosition.Center" Height="650" />
+                    </MudItem>
+                </MudHidden>
+                <MudItem xs="12" md="7">
+                    <MudStack Class="mud-height-full" Justify="Justify.SpaceBetween">
+                        <MudText Class="ma-16 mb-0" Typo="Typo.h2">@homeCarouselDataHolder.Title</MudText>
+                        <MudText Class="mx-10 mt-n12" Typo="Typo.body1">@homeCarouselDataHolder.Description</MudText>
+
+                        <MudSpacer />
+
+                        <MudButton Class="ma-16" Size="Size.Large" Variant="Variant.Outlined" Color="Color.Surface">En savoir plus</MudButton>
+                    </MudStack>
+                </MudItem>
+            </MudGrid>
+        </MudCarouselItem>
+    }
+</MudCarousel>
+
+
+<MudContainer Class="pa-16" Fixed>
+    <MudText Typo="Typo.h2" Align="Align.Center">
+        <b>@Localizer[nameof(HomeLocalizations.Section_ReadyToUse_Title_0)]</b>
+        <br />
+        @Localizer[nameof(HomeLocalizations.Section_ReadyToUse_Title_1)]
+    </MudText>
+
+    <MudDivider Class="my-16" DividerType="DividerType.Middle" />
+
+    <MudGrid Class="mt-8" Justify="Justify.Center">
+        @foreach (var readyTouseDataHolder in ReadyTouseDataHolders) {
+            <MudItem xs="12" md="3">
+                <MudPaper Class="mud-height-full">
+                    <MudStack Class="mud-height-full px-8 py-16" Justify="Justify.SpaceEvenly" AlignItems="AlignItems.Center">
+                        <MudText Typo="Typo.h3" Align="Align.Center">@readyTouseDataHolder.Title</MudText>
+                        <MudText Class="mt-4" Typo="Typo.body1" Align="Align.Center">@readyTouseDataHolder.Description</MudText>
+                    </MudStack>
+                </MudPaper>
+            </MudItem>
+        }
+    </MudGrid>
+</MudContainer>
