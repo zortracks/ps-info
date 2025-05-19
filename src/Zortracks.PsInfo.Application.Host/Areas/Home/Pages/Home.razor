@@ -4,38 +4,53 @@
 @using MudBlazor
 @using Zortracks.PsInfo.Application.Host.Areas.Home.Resources
 
-<MudContainer Class="main">
-    <MudText Class="mb-20" Typo="Typo.h1" Align="Align.Center"><b>Assistance et Services informatiques</b></MudText>
+<div style="position: relative;">
+    <MudImage Style="height: calc(100vh - var(--mud-appbar-height)); width: 100%;" Src="/img/network.jpg" ObjectFit="ObjectFit.Cover" />
+    <MudOverlay DarkBackground Absolute Visible>
+        <MudText Typo="Typo.h2" Align="Align.Center"><b>Assistance et Services Informatiques</b></MudText>
+    </MudOverlay>
+</div>
+
+<MudContainer Class="my-16">
+    <MudGrid Justify="Justify.SpaceAround">
+        <MudItem xs="12" md="4">
+            <MudButton Class="mud-width-full" Href="/contact" Size="Size.Large" Variant="Variant.Outlined" Color="Color.Primary" StartIcon="@Icons.Material.Filled.Email">Contact</MudButton>
+        </MudItem>
+        <MudItem xs="12" md="4">
+            <MudButton Class="mud-width-full" Href="/services" Size="Size.Large" Variant="Variant.Outlined" Color="Color.Primary" StartIcon="@Icons.Material.Filled.GifBox">Préstations</MudButton>
+        </MudItem>
+    </MudGrid>
+
+    <MudDivider Class="my-20" DividerType="DividerType.Middle" />
+
+    <MudText Typo="Typo.h4" Align="Align.Center">Interventions chez les petites et moyenne entreprise, administrations publics et écoles dans l'ouest Lyonnais et la Loire.</MudText>
+
+    <MudDivider Class="my-20" DividerType="DividerType.Middle" />
+
+    <MudGrid Justify="Justify.SpaceAround">
+        <MudItem xs="12" md="4">
+            <MudPaper Class="py-12" Outlined>
+                <MudStack AlignItems="AlignItems.Center">
+                    <MudIcon Color="Color.Primary" Size="Size.Large" Icon="@Icons.Material.Filled.AccountCircle" />
+                    <MudText Class="mt-4" Color="Color.Primary" Typo="Typo.h4">Interlocuteur unique</MudText>
+                </MudStack>
+            </MudPaper>
+        </MudItem>
+        <MudItem xs="12" md="4">
+            <MudPaper Class="py-12" Outlined>
+                <MudStack AlignItems="AlignItems.Center">
+                    <MudIcon Color="Color.Primary" Size="Size.Large" Icon="@Icons.Material.Filled.Work" />
+                    <MudText Class="mt-4" Color="Color.Primary" Typo="Typo.h4">Expérience et qualité</MudText>
+                </MudStack>
+            </MudPaper>
+        </MudItem>
+        <MudItem xs="12" md="4">
+            <MudPaper Class="py-12" Outlined>
+                <MudStack AlignItems="AlignItems.Center">
+                    <MudIcon Color="Color.Primary" Size="Size.Large" Icon="@Icons.Material.Filled.Speed" />
+                    <MudText Class="mt-4" Color="Color.Primary" Typo="Typo.h4">Réactivité</MudText>
+                </MudStack>
+            </MudPaper>
+        </MudItem>
+    </MudGrid>
 </MudContainer>
-
-<style>
-    :root {
-        --blur-size: blur(9px);
-    }
-
-    .main {
-        position: relative;
-        align-content: end;
-        height: calc(100vh - var(--mud-appbar-height));
-    }
-
-        .main::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: -1;
-            display: block;
-            background: url('/img/network.jpg');
-            background-size: cover;
-            box-shadow: inset 0 0 0 100vh rgba(212, 69, 22, 0.6);
-            width: 100%;
-            height: 100%;
-            -webkit-filter: var(--blur-size);
-            -moz-filter: var(--blur-size);
-            -o-filter: var(--blur-size);
-            -ms-filter: var(--blur-size);
-            filter: var(--blur-size);
-        }
-</style>
