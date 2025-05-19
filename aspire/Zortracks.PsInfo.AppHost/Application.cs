@@ -1,6 +1,5 @@
 ﻿using Aspire.Hosting;
 using Aspire.Hosting.ApplicationModel;
-using System;
 
 namespace Zortracks.PsInfo.AppHost {
 
@@ -8,7 +7,9 @@ namespace Zortracks.PsInfo.AppHost {
         public static IResourceBuilder<ProjectResource> ApplicationResource { get; private set; }
 
         public static void Configure(IDistributedApplicationBuilder builder) {
-            ApplicationResource = builder.AddProject<Projects.Zortracks_PsInfo_Application_Host>("application");
+            ApplicationResource = builder.AddProject<Projects.Zortracks_PsInfo_Application_Host>("application")
+                .WaitFor(Apis.ApisResource)
+                .WithReference(Apis.ApisResource);
         }
     }
 }

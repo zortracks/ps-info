@@ -1,6 +1,7 @@
 namespace: ps-info
 
 resources:
+- apis
 - application
 - namespace.yaml
 - image-pull-secret.yaml

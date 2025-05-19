@@ -14,6 +14,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\..\src\Zortracks.PsInfo.Apis.Host\Zortracks.PsInfo.Apis.Host.csproj" />
 		<ProjectReference Include="..\..\src\Zortracks.PsInfo.Application.Host\Zortracks.PsInfo.Application.Host.csproj" />
 	</ItemGroup>
 
