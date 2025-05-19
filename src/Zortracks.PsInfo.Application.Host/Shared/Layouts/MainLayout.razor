@@ -2,7 +2,7 @@
 @using MudBlazor
 @inherits LayoutComponentBase
 
-<MudThemeProvider IsDarkMode />
+<MudThemeProvider IsDarkMode Theme="Theme"/>
 <MudPopoverProvider />
 <MudDialogProvider />
 <MudSnackbarProvider />
@@ -48,4 +48,9 @@
 
 @code {
     private bool DrawerOpen { get; set; }
+    private MudTheme Theme { get; } = new MudTheme() {
+            PaletteDark = new PaletteDark() {
+                Primary = new MudBlazor.Utilities.MudColor("#d44516")
+            }
+        };
 }
