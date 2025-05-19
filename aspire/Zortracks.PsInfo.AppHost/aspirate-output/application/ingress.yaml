@@ -1,16 +1,15 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  annotations:
-    cert-manager.io/cluster-issuer: letsencrypt-staging
   name: application
-  namespace: ps-info
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
 spec:
-  ingressClassName: nginx
   tls:
-  - hosts:
+  - secretName: secret-tls-application
+    hosts:
     - ps-info.ddns.net
-    secretName: application-tls
   rules:
   - host: ps-info.ddns.net
     http:

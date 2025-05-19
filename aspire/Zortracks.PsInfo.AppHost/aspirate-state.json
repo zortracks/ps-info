@@ -5,38 +5,23 @@
   "namespace": "ps-info",
   "containerRegistry": "registry.versonium.cloud",
   "containerImageTags": [
-    "v0.0.3"
+    "v0.1.1"
   ],
   "imagePullPolicy": "IfNotPresent",
   "containerBuilder": "docker",
   "containerRepositoryPrefix": "ps-info",
-  "kubeContext": "kubernetes-admin@kubernetes",
+  "kubeContext": "default",
   "outputFormat": "kustomize",
   "skipFinalKustomizeGeneration": false,
-  "privateRegistryUrl": "registry.versonium.cloud",
-  "privateRegistryUsername": "zortracks",
+  "privateRegistryUrl": "https://registry.versonium.cloud",
   "privateRegistryEmail": "aspir8@aka.ms",
   "withPrivateRegistry": true,
   "includeDashboard": true,
   "useCustomNamespace": true,
   "secrets": {
-    "salt": "ebU32QR8CQ09JdeC",
-    "hash": "6tyDv5\u002Bfpz4wy6Dxxs9Yo/6WbiMQVRlUvVYOoFMn36k=",
-    "secrets": {
-      "sql-server-password": {
-        "value": "ebU32QR8CQ09JdeC/Hdfa4QovPtCGgfFjWjT0XMVEfSLExUxonI8tifECgNfpfMrWRA="
-      },
-      "sql-server": {
-        "MSSQL_SA_PASSWORD": "ebU32QR8CQ09JdeC/Hdfa4QovPtCGgfFjWjT0XMVEfSLExUxonI8tifECgNfpfMrWRA="
-      },
-      "pfsinfo": {},
-      "apis": {
-        "ConnectionStrings__pfsinfo": "ebU32QR8CQ09JdeC160s3oXDAJW6mFVeSREWX3IEDMvYLlIVqnddrDryGRcU/bRyARVBtcOOya6IpmGiRvzppfFml15ZS8XyywsQP8THEb0Lnoe\u002B9Yu0qckdjD6R2ZQB7Q8dyR/\u002B/iKinNjpbckzsPVw2TVdgoY9QveRNSuQiqQ5MMnwAKnwTDumIQ9tOxSouw==",
-        "ConnectionStrings__sql-database": "ebU32QR8CQ09JdeCMEKB68hBWOCUWL/AxIdoi3IEDMvYLlIVqnddrDryGRcU/bRyARVBtcOOya6IpmGiRvzppfFml15ZS8XyywsQP8THEb0Lnoe\u002B9Yu0qckdjD6R2ZQB7Q8dyR/\u002B/iKinNjpbckzsPVw2TVdgoY9QveRNSuQiqQ5MMnwAKnwTDumIRp3PByh"
-      },
-      "application": {},
-      "sql-database": {}
-    }
+    "salt": "onnLqfJH/3GVsFUS",
+    "hash": "YIvXXOUqBedJ\u002BpIGb4/hAXZ9HsR5e25Q5YVV58r1Waw=",
+    "secrets": {}
   },
   "processAllComponents": true
 }

@@ -2,18 +2,24 @@
 @using MudBlazor
 @inherits LayoutComponentBase
 
-<MudThemeProvider IsDarkMode />
+<MudThemeProvider IsDarkMode Theme="Theme"/>
 <MudPopoverProvider />
 <MudDialogProvider />
 <MudSnackbarProvider />
 
 <MudLayout>
-    <MudAppBar Elevation="1">
+    <MudAppBar Class="px-md-20" Elevation="1" >
         <MudHidden Breakpoint="Breakpoint.MdAndUp">
             <MudIconButton Icon="@Icons.Material.Filled.Menu" OnClick="@(() => DrawerOpen = !DrawerOpen)" />
         </MudHidden>
 
-        <MudText Typo="Typo.h5" Class="ml-3">PS-Info</MudText>
+        <MudButton>
+            <MudText Typo="Typo.h5">Pierre STORACI</MudText>
+
+            <MudHidden Breakpoint="Breakpoint.MdAndDown">
+                <MudText Typo="Typo.h6" Class="ml-2">Services informatiques</MudText>
+            </MudHidden>
+        </MudButton>
 
         <MudSpacer />
 
@@ -21,7 +27,6 @@
             <NavMenu />
         </MudHidden>
 
-        <MudSpacer />
     </MudAppBar>
 
     <MudHidden Breakpoint="Breakpoint.MdAndUp">
@@ -43,4 +48,9 @@
 
 @code {
     private bool DrawerOpen { get; set; }
+    private MudTheme Theme { get; } = new MudTheme() {
+            PaletteDark = new PaletteDark() {
+                Primary = new MudBlazor.Utilities.MudColor("#d44516")
+            }
+        };
 }
