@@ -5,7 +5,7 @@
   "namespace": "ps-info",
   "containerRegistry": "registry.versonium.cloud",
   "containerImageTags": [
-    "v0.1.1"
+    "v0.1.2"
   ],
   "imagePullPolicy": "IfNotPresent",
   "containerBuilder": "docker",
