@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Routing;
 using Microsoft.Extensions.Localization;
 using MudBlazor;
 using System;
@@ -29,15 +30,23 @@ namespace Zortracks.PsInfo.Application.Host.Shared.Layouts {
         #region Methods
 
         protected override void OnInitialized() {
+            NavigationManager.LocationChanged += NavigationManager_LocationChanged;
             NavigationElements = new List<NavigationElement>()
             {
                 new NavigationElement() {
                     Title = Localizer[nameof(NavMenuLocalizations.Menu_Home)],
                     Icon = Icons.Material.Filled.Home,
                     Href = "/"
+                },
+                new NavigationElement() {
+                    Title = "Services",
+                    Icon = Icons.Material.Filled.MiscellaneousServices,
+                    Href = "/services"
                 }
             };
         }
+
+        private void NavigationManager_LocationChanged(object sender, LocationChangedEventArgs e) => StateHasChanged();
 
         private Color GetColorForMenu(NavigationElement navigationElement) => new Uri(NavigationManager.Uri).LocalPath == navigationElement.Href ? Color.Primary : Color.Default;
 

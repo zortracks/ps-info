@@ -1,0 +1,137 @@
+﻿@page "/services"
+
+@using Microsoft.AspNetCore.Components.Web
+@using MudBlazor
+
+<MudText Class="mt-16 mb-10" Typo="Typo.h2" Align="Align.Center">Services</MudText>
+
+<MudContainer>
+    <MudGrid>
+        <MudItem xs="12" md="4">
+            <MudCard Outlined>
+                <MudCardMedia Image="/img/workstation.jpeg" />
+                <MudCardContent Class="ma-0 pa-0">
+                    <MudExpansionPanel Text="Installation et déploiement de postes de travail et serveurs" Dense>
+                        <MudText Class="ma-4" Typo="Typo.body1">
+                            <ul>
+                                <li>Conseil sur le choix du matériel adapté à vos besoins et à votre budget.</li>
+                                <li>Installation, configuration et mise en service des postes utilisateurs (Windows, Linux, etc.).</li>
+                                <li>Déploiement de serveurs physiques ou virtuels pour héberger vos applications ou services internes.</li>
+                                <li>Intégration dans votre environnement réseau existant et gestion des droits d’accès.</li>
+                            </ul>
+                        </MudText>
+                    </MudExpansionPanel>
+                </MudCardContent>
+            </MudCard>
+        </MudItem>
+        <MudItem xs="12" md="4">
+            <MudCard Outlined>
+                <MudCardMedia Image="/img/network.jpg" />
+                <MudCardContent Class="ma-0 pa-0">
+                    <MudExpansionPanel Text="Gestion et maintenance des réseaux informatiques" Dense>
+                        <MudText Class="ma-4" Typo="Typo.body1">
+                            <ul>
+                                <li>Mise en place et configuration de votre infrastructure réseau (switchs, routeurs, bornes Wi-Fi).</li>
+                                <li>Sécurisation de votre réseau local et interconnexion de plusieurs sites si besoin.</li>
+                                <li>Surveillance proactive pour détecter les incidents avant qu’ils ne deviennent critiques.</li>
+                                <li>Optimisation des performances et de la fiabilité de vos connexions.</li>
+                            </ul>
+                        </MudText>
+                    </MudExpansionPanel>
+                </MudCardContent>
+            </MudCard>
+        </MudItem>
+        <MudItem xs="12" md="4">
+            <MudCard Outlined>
+                <MudCardMedia Image="/img/outsourcing.jpg" />
+                <MudCardContent Class="ma-0 pa-0">
+                    <MudExpansionPanel Text="Mise en place de solutions de télésurveillance" Dense>
+                        <MudText Class="ma-4" Typo="Typo.body1">
+                            <ul>
+                                <li>Étude des besoins en sécurité pour vos locaux professionnels ou établissements scolaires.</li>
+                                <li>Installation de caméras de surveillance IP avec enregistrement local ou cloud.</li>
+                                <li>Configuration d’un accès à distance sécurisé pour visualisation en temps réel.</li>
+                                <li>Maintenance, mises à jour et assistance technique pour garantir la continuité du service.</li>
+                            </ul>
+                        </MudText>
+                    </MudExpansionPanel>
+                </MudCardContent>
+            </MudCard>
+        </MudItem>
+        <MudItem xs="12" md="4">
+            <MudCard Outlined>
+                <MudCardMedia Image="/img/backup.jpg" />
+                <MudCardContent Class="ma-0 pa-0">
+                    <MudExpansionPanel Text="Gestion de la sauvegarde des données" Dense>
+                        <MudText Class="ma-4" Typo="Typo.body1">
+                            <ul>
+                                <li>Mise en place de stratégies de sauvegarde locales et/ou externalisées (NAS, cloud, disques sécurisés).</li>
+                                <li>Planification de sauvegardes automatiques pour assurer la continuité d’activité.</li>
+                                <li>Vérification régulière de l’intégrité des sauvegardes et des procédures de restauration.</li>
+                                <li>Protection contre la perte de données, les cyberattaques (ransomwares) et les erreurs humaines.</li>
+                            </ul>
+                        </MudText>
+                    </MudExpansionPanel>
+                </MudCardContent>
+            </MudCard>
+        </MudItem>
+        <MudItem xs="12" md="4">
+            <MudCard Outlined>
+                <MudCardMedia Image="/img/dsi.jpg" />
+                <MudCardContent Class="ma-0 pa-0">
+                    <MudExpansionPanel Text="Externalisation de la fonction DSI" Dense>
+                        <MudText Class="ma-4" Typo="Typo.body1">
+                            <ul>
+                                <li>Prise en charge du pilotage de votre système d’information en tant que DSI externalisé.</li>
+                                <li>Stratégie IT alignée sur vos objectifs métier (croissance, sécurisation, conformité).</li>
+                                <li>Coordination des prestataires, gestion des projets, et accompagnement au changement.</li>
+                                <li>Présence régulière ou ponctuelle selon vos besoins (1/2 journée à plusieurs jours par mois).</li>
+                            </ul>
+                        </MudText>
+                    </MudExpansionPanel>
+                </MudCardContent>
+            </MudCard>
+        </MudItem>
+        <MudItem xs="12" md="4">
+            <MudCard Outlined>
+                <MudCardMedia Image="/img/support.jpg" />
+                <MudCardContent Class="ma-0 pa-0">
+                    <MudExpansionPanel Text="Support technique & assistance utilisateurs" Dense>
+                        <MudText Class="ma-4" Typo="Typo.body1">
+                            <ul>
+                                <li>Assistance réactive pour vos utilisateurs en cas de panne ou de question technique.</li>
+                                <li>Prise en main à distance ou intervention sur site rapide.</li>
+                                <li>Suivi des demandes via un système de tickets si souhaité.</li>
+                                <li>Accompagnement des équipes dans l’utilisation quotidienne des outils numériques.</li>
+                            </ul>
+                        </MudText>
+                    </MudExpansionPanel>
+                </MudCardContent>
+            </MudCard>
+        </MudItem>
+    </MudGrid>
+
+    <MudDivider Class="my-16" DividerType="DividerType.Middle" />
+
+    <MudPaper Outlined>
+        <MudStack Row>
+            <MudHidden Breakpoint="Breakpoint.MdAndDown">
+                <MudImage Style="width: 33%" Src="/img/support.jpg" ObjectFit="ObjectFit.Cover" />
+            </MudHidden>
+
+            <MudStack Justify="Justify.SpaceBetween">
+                <MudText Class="mx-4 mt-3" Typo="Typo.h4">Support technique & Assistance</MudText>
+                <MudText Class="mx-3" Typo="Typo.body1">Assistance technique réactive et dépannage sur site ou à distance pour garantir la continuité de votre activité en cas de panne ou de difficulté informatique.</MudText>
+
+                <MudSpacer />
+
+                <MudStack Class="pa-3" AlignItems="AlignItems.End">
+                    <MudStack Row>
+                        <MudButton Href="tel:+262693484534" StartIcon="@Icons.Material.Filled.Phone" Color="Color.Primary">Par téléphone</MudButton>
+                        <MudButton Href="/support" StartIcon="@Icons.Material.Filled.Support" Color="Color.Primary">Centre de support</MudButton>
+                    </MudStack>
+                </MudStack>
+            </MudStack>
+        </MudStack>
+    </MudPaper>
+</MudContainer>
