@@ -8,6 +8,7 @@ namespace Zortracks.PsInfo.AppHost {
 
         public static void Configure(IDistributedApplicationBuilder builder) {
             ApplicationResource = builder.AddProject<Projects.Zortracks_PsInfo_Application_Host>("application")
+                .WithReplicas(2)
                 .WaitFor(Apis.ApisResource)
                 .WithReference(Apis.ApisResource);
         }
