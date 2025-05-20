@@ -9,7 +9,7 @@ namespace Zortracks.PsInfo.AppHost {
 
         public static void Configure(IDistributedApplicationBuilder builder) {
             MsSqlServerResource = builder.AddSqlServer("mssql-server")
-                .WithDataVolume("mssql-data")
+                .WithDataVolume("mssql-server-data")
                 .WithLifetime(ContainerLifetime.Persistent);
 
             PsInfoDatabase = MsSqlServerResource.AddDatabase("ps-info-database", "ps-info");

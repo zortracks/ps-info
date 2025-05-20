@@ -30,13 +30,13 @@ spec:
             - secretRef:
                 name: mssql-server-secrets
           volumeMounts:
-            - name: mssql-data
+            - name: mssql-server-data
               mountPath: /var/opt/mssql
   volumeClaimTemplates:
     - metadata:
-        name: mssql-data
+        name: mssql-server-data
       spec:
-        accessModes: ["ReadWriteOnce"]
+        accessModes: ["ReadWriteMany"]
         resources:
           requests:
             storage: 1Gi

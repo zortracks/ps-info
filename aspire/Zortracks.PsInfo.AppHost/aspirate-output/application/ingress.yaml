@@ -11,8 +11,7 @@ spec:
     hosts:
     - ps-info.ddns.net
   rules:
-  - host: ps-info.ddns.net
-    http:
+  - http:
       paths:
       - path: /
         pathType: Prefix
