@@ -4,7 +4,7 @@
   "namespace": "ps-info",
   "containerRegistry": "registry.versonium.cloud",
   "containerImageTags": [
-    "v0.1.2"
+    "v0.1.3"
   ],
   "imagePullPolicy": "IfNotPresent",
   "containerBuilder": "docker",
@@ -27,9 +27,15 @@
       "mysql-server-phpmyadmin": {},
       "ps-info-database": {},
       "apis": {
-        "ConnectionStrings__ps-info-database": "onnLqfJH/3GVsFUSgdKQeCeZuzMT1zo2mNJg8GkYwgvnEOq5\u002BL5q\u002BUgwVntSesKT/OiLOQznk9WfhS55RRfweeVmls\u002B0K5TQ3Wn4Jff/r63XmrNzrUfmwVtvYdKpcFv9cSbTsQmv4Z95ynYBVvOhrsvyCRLMLj4="
+        "ConnectionStrings__ps-info-database": "onnLqfJH/3GVsFUSe9sZucEwkVsRoSxcUx3ETGkYwgvnEOq58r5q\u002BUgwVntSesKEnbPKfgqB04DbnjJOHRaxC/E6l9OsMN3kgXuqAs3p\u002B\u002BTzlL8FuXDf1XlpY8iHf2ihUAzE8RbJv6lu22UgUvKw\u002Bt3oRxrWLWwZ1LetawzQXtAvfSF3BWUsk\u002BXQ9pWHg3F\u002B/ayY"
       },
-      "application": {}
+      "application": {},
+      "mssql-server-password": {
+        "value": "onnLqfJH/3GVsFUSxdMosVr2hUB841LtWLa6WFtc4CjmUqOVyLdVwyoydkptbOPwx9U="
+      },
+      "mssql-server": {
+        "MSSQL_SA_PASSWORD": "onnLqfJH/3GVsFUSxdMosVr2hUB841LtWLa6WFtc4CjmUqOVyLdVwyoydkptbOPwx9U="
+      }
     }
   },
   "processAllComponents": true

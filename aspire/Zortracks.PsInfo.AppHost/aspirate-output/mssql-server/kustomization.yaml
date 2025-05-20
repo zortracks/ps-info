@@ -1,0 +1,18 @@
+resources:
+- statefulset.yaml
+- service.yaml
+
+generatorOptions:
+  disableNameSuffixHash: true
+
+configMapGenerator:
+- name: mssql-server-env
+  literals:
+    - ACCEPT_EULA=Y
+    - OTEL_EXPORTER_OTLP_ENDPOINT=http://aspire-dashboard:18889
+    - OTEL_SERVICE_NAME=mssql-server
+
+secretGenerator:
+- name: mssql-server-secrets
+  envs:
+  - .mssql-server.secrets
