@@ -1,8 +1,10 @@
 using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MudBlazor;
 using MudBlazor.Services;
+using System;
 using Zortracks.PsInfo.Application.Host.Shared.Components;
 
 namespace Zortracks.PsInfo.Application.Host {
@@ -20,6 +22,7 @@ namespace Zortracks.PsInfo.Application.Host {
             });
             builder.Services.AddRazorComponents().AddInteractiveServerComponents();
             builder.Services.AddLocalization();
+            builder.Services.AddHttpClient("apis", configure => configure.BaseAddress = builder.Configuration.GetValue<Uri>("services:apis:http:0"));
 
             /* ========= Build web application ========= */
             var app = builder.Build();
