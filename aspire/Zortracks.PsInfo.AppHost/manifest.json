@@ -29,6 +29,16 @@
       "type": "value.v0",
       "connectionString": "{mssql-server.connectionString};Initial Catalog=ps-info"
     },
+    "ps-info-database-migrations": {
+      "type": "project.v0",
+      "path": "../../src/Zortracks.PsInfo.Data.Migrations/Zortracks.PsInfo.Data.Migrations.csproj",
+      "env": {
+        "OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EXCEPTION_LOG_ATTRIBUTES": "true",
+        "OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EVENT_LOG_ATTRIBUTES": "true",
+        "OTEL_DOTNET_EXPERIMENTAL_OTLP_RETRY": "in_memory",
+        "ConnectionStrings__ps-info-database": "{ps-info-database.connectionString}"
+      }
+    },
     "apis": {
       "type": "project.v0",
       "path": "../../src/Zortracks.PsInfo.Apis.Host/Zortracks.PsInfo.Apis.Host.csproj",
