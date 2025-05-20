@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<Sdk Name="Aspire.AppHost.Sdk" Version="9.0.0" />
 
@@ -10,12 +10,14 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Aspire.Hosting.AppHost" Version="9.2.1" />
+		<PackageReference Include="Aspire.Hosting.AppHost" Version="9.3.0" />
+		<PackageReference Include="Aspire.Hosting.SqlServer" Version="9.3.0" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\..\src\Zortracks.PsInfo.Apis.Host\Zortracks.PsInfo.Apis.Host.csproj" />
 		<ProjectReference Include="..\..\src\Zortracks.PsInfo.Application.Host\Zortracks.PsInfo.Application.Host.csproj" />
+		<ProjectReference Include="..\..\src\Zortracks.PsInfo.Data.Migrations\Zortracks.PsInfo.Data.Migrations.csproj" />
 	</ItemGroup>
 
 </Project>

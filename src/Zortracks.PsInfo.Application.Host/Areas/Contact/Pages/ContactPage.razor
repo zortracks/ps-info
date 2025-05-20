@@ -1,0 +1,20 @@
+﻿@page "/contact"
+
+@using MudBlazor
+
+<MudContainer>
+    <MudText Typo="Typo.h2" Align="Align.Center">Demande de contact</MudText>
+
+    <MudDivider Class="my-16" DividerType="DividerType.FullWidth" />
+
+    <MudPaper Class="pa-4" Outlined>
+        <MudForm @ref="Form">
+            <MudTextField Class="mt-3" @bind-Value="ContactRequestModel.FromName" Label="Nom" Placeholder="John Doe" Variant="Variant.Outlined" Required RequiredError="Votre nom est requis." />
+            <MudTextField Class="mt-3" @bind-Value="ContactRequestModel.FromEmail" Label="Email" Placeholder="john.doe@gmail.com" Variant="Variant.Outlined" Required RequiredError="Votre email est requis." InputType="InputType.Email" />
+            <MudTextField Class="mt-3" @bind-Value="ContactRequestModel.FromPhone" Label="Téléphone" Placeholder="John Doe" Variant="Variant.Outlined" Required RequiredError="Votre téléphone est requis." InputType="InputType.Telephone" />
+            <MudTextField Class="mt-3" @bind-Value="ContactRequestModel.Subject" Label="Sujet" Placeholder="Un nouveau projet" Variant="Variant.Outlined" Required RequiredError="Un sujet est requis." />
+            <MudTextField Class="mt-3" @bind-Value="ContactRequestModel.Message" Label="Message" Variant="Variant.Outlined" Required RequiredError="Un message est requis." Lines="8" />
+            <MudButton Class="mt-3" Variant="Variant.Outlined" Color="Color.Primary" OnClick="SendContactRequestAsync">Envoyer la demande</MudButton>
+        </MudForm>
+    </MudPaper>
+</MudContainer>

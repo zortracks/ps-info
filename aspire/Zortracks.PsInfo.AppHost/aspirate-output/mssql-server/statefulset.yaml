@@ -1,0 +1,42 @@
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: mssql-server
+  labels:
+    app: mssql-server
+spec:
+  serviceName: "mssql-server"
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mssql-server
+  template:
+    metadata:
+      labels:
+        app: mssql-server
+    spec:
+      imagePullSecrets:
+        - name: image-pull-secret
+      containers:
+        - name: mssql-server
+          image: mcr.microsoft.com/mssql/server:2022-latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 1433
+          envFrom:
+            - configMapRef:
+                name: mssql-server-env
+            - secretRef:
+                name: mssql-server-secrets
+          volumeMounts:
+            - name: mssql-server-data
+              mountPath: /var/opt/mssql
+  volumeClaimTemplates:
+    - metadata:
+        name: mssql-server-data
+      spec:
+        accessModes: ["ReadWriteMany"]
+        resources:
+          requests:
+            storage: 1Gi

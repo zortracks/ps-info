@@ -2,34 +2,31 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: application
+  name: ps-info-database-migrations
   labels:
-    app: application
+    app: ps-info-database-migrations
 spec:
   minReadySeconds: 60
   replicas: 1
   selector:
     matchLabels:
-      app: application
+      app: ps-info-database-migrations
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        app: application
+        app: ps-info-database-migrations
     spec:
       imagePullSecrets:
       - name: image-pull-secret
       containers:
-      - name: application
-        image: registry.versonium.cloud/ps-info/application:v0.1.4
+      - name: ps-info-database-migrations
+        image: registry.versonium.cloud/ps-info/ps-info-database-migrations:v0.1.4
         imagePullPolicy: IfNotPresent
-        ports:
-        - name: http
-          containerPort: 8080
-        - name: https
-          containerPort: 8443
         envFrom:
         - configMapRef:
-            name: application-env
+            name: ps-info-database-migrations-env
+        - secretRef:
+            name: ps-info-database-migrations-secrets
       terminationGracePeriodSeconds: 180

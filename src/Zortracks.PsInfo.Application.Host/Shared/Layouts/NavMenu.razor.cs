@@ -42,6 +42,11 @@ namespace Zortracks.PsInfo.Application.Host.Shared.Layouts {
                     Title = "Services",
                     Icon = Icons.Material.Filled.MiscellaneousServices,
                     Href = "/services"
+                },
+                new NavigationElement() {
+                    Title = "Contact",
+                    Icon = Icons.Material.Filled.Email,
+                    Href = "/contact"
                 }
             };
         }
