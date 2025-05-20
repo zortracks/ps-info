@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Zortracks.PsInfo.Data.Entities;
 
 namespace Zortracks.PsInfo.Data.DbContexts {
 
@@ -6,5 +7,7 @@ namespace Zortracks.PsInfo.Data.DbContexts {
 
         public PsInfoDbContext(DbContextOptions options) : base(options) {
         }
+
+        public DbSet<ContactRequestEntity> ContactRequests { get; set; }
     }
 }

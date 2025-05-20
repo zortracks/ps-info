@@ -7,6 +7,7 @@
 	<ItemGroup>
 		<ProjectReference Include="..\..\aspire\Zortracks.PsInfo.ServiceDefaults\Zortracks.PsInfo.ServiceDefaults.csproj" />
 		<ProjectReference Include="..\Zortracks.PsInfo.Data\Zortracks.PsInfo.Data.csproj" />
+		<ProjectReference Include="..\Zortracks.PsInfo.Models\Zortracks.PsInfo.Models.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
