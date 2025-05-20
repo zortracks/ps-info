@@ -17,3 +17,7 @@ configMapGenerator:
     - OTEL_SERVICE_NAME=apis
     - ASPNETCORE_URLS=http://+:8080;
 
+secretGenerator:
+- name: apis-secrets
+  envs:
+  - .apis.secrets

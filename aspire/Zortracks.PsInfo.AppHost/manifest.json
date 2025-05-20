@@ -1,6 +1,34 @@
 {
   "$schema": "https://json.schemastore.org/aspire-8.0.json",
   "resources": {
+    "mssql-server": {
+      "type": "container.v0",
+      "connectionString": "Server={mssql-server.bindings.tcp.host},{mssql-server.bindings.tcp.port};User ID=sa;Password={mssql-server-password.value};TrustServerCertificate=true",
+      "image": "mcr.microsoft.com/mssql/server:2022-latest",
+      "volumes": [
+        {
+          "name": "mssql-server-data",
+          "target": "/var/opt/mssql",
+          "readOnly": false
+        }
+      ],
+      "env": {
+        "ACCEPT_EULA": "Y",
+        "MSSQL_SA_PASSWORD": "{mssql-server-password.value}"
+      },
+      "bindings": {
+        "tcp": {
+          "scheme": "tcp",
+          "protocol": "tcp",
+          "transport": "tcp",
+          "targetPort": 1433
+        }
+      }
+    },
+    "ps-info-database": {
+      "type": "value.v0",
+      "connectionString": "{mssql-server.connectionString};Initial Catalog=ps-info"
+    },
     "apis": {
       "type": "project.v0",
       "path": "../../src/Zortracks.PsInfo.Apis.Host/Zortracks.PsInfo.Apis.Host.csproj",
@@ -9,7 +37,8 @@
         "OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EVENT_LOG_ATTRIBUTES": "true",
         "OTEL_DOTNET_EXPERIMENTAL_OTLP_RETRY": "in_memory",
         "ASPNETCORE_FORWARDEDHEADERS_ENABLED": "true",
-        "HTTP_PORTS": "{apis.bindings.http.targetPort}"
+        "HTTP_PORTS": "{apis.bindings.http.targetPort}",
+        "ConnectionStrings__ps-info-database": "{ps-info-database.connectionString}"
       },
       "bindings": {
         "http": {
@@ -46,6 +75,24 @@
           "scheme": "https",
           "protocol": "tcp",
           "transport": "http"
+        }
+      }
+    },
+    "mssql-server-password": {
+      "type": "parameter.v0",
+      "value": "{mssql-server-password.inputs.value}",
+      "inputs": {
+        "value": {
+          "type": "string",
+          "secret": true,
+          "default": {
+            "generate": {
+              "minLength": 22,
+              "minLower": 1,
+              "minUpper": 1,
+              "minNumeric": 1
+            }
+          }
         }
       }
     }

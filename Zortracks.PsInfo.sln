@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zortracks.PsInfo.AppHost", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zortracks.PsInfo.Apis.Host", "src\Zortracks.PsInfo.Apis.Host\Zortracks.PsInfo.Apis.Host.csproj", "{667F634B-F407-3484-0572-B886AAE084FA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zortracks.PsInfo.Data", "src\Zortracks.PsInfo.Data\Zortracks.PsInfo.Data.csproj", "{98ADFA2D-AA04-46E6-A16B-97FCBFC74AA9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{667F634B-F407-3484-0572-B886AAE084FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{667F634B-F407-3484-0572-B886AAE084FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{667F634B-F407-3484-0572-B886AAE084FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98ADFA2D-AA04-46E6-A16B-97FCBFC74AA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98ADFA2D-AA04-46E6-A16B-97FCBFC74AA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98ADFA2D-AA04-46E6-A16B-97FCBFC74AA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98ADFA2D-AA04-46E6-A16B-97FCBFC74AA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +52,7 @@ Global
 		{DFA0905E-F800-228E-A75D-EBB2B4F82A4B} = {1625BF73-1BB8-4F28-AE70-E19BBA3AE195}
 		{B80D8267-DB59-5989-1120-3FE368CDDF0B} = {1625BF73-1BB8-4F28-AE70-E19BBA3AE195}
 		{667F634B-F407-3484-0572-B886AAE084FA} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{98ADFA2D-AA04-46E6-A16B-97FCBFC74AA9} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4EE2B6DC-A44D-4E97-AA80-91CC3DCCE3B6}

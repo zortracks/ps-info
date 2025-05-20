@@ -32,4 +32,6 @@ spec:
         envFrom:
         - configMapRef:
             name: apis-env
+        - secretRef:
+            name: apis-secrets
       terminationGracePeriodSeconds: 180

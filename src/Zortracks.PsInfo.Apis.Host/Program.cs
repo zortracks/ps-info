@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Zortracks.PsInfo.Data.DbContexts;
 
 namespace Zortracks.PsInfo.Apis.Host {
 
@@ -13,6 +14,9 @@ namespace Zortracks.PsInfo.Apis.Host {
             // Core services
             builder.AddServiceDefaults();
             builder.Services.AddControllers();
+
+            // Database services
+            builder.AddSqlServerDbContext<PsInfoDbContext>("ps-info-database");
 
             /* ========= Build web application ========= */
             var app = builder.Build();

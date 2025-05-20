@@ -1,6 +1,7 @@
 namespace: ps-info
 
 resources:
+- mssql-server
 - apis
 - application
 - namespace.yaml
