@@ -8,8 +8,8 @@ namespace Zortracks.PsInfo.AppHost {
 
         public static void Configure(IDistributedApplicationBuilder builder) {
             ApisResource = builder.AddProject<Projects.Zortracks_PsInfo_Apis_Host>("apis")
-                .WaitFor(Database.PsInfoDatabase)
-                .WithReference(Database.PsInfoDatabase);
+                .WaitFor(Database.PsInfoDatabaseResource)
+                .WithReference(Database.PsInfoDatabaseResource);
         }
     }
 }
