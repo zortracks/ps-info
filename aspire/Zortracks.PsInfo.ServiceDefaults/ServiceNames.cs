@@ -13,6 +13,7 @@
         }
 
         public static class Status {
+            public const string Apis = $"{StatusPrefix}apis";
             public const string Database = $"{StatusPrefix}database";
             public const string PullingService = $"{StatusPrefix}pulling-service";
             public const string RabbitMQ = $"{StatusPrefix}rabbitmq";

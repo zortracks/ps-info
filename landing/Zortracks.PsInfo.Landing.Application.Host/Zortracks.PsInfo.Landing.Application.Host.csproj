@@ -3,42 +3,39 @@
 	<PropertyGroup>
 		<TargetFramework>net9.0</TargetFramework>
 		<UserSecretsId>d0031780-8d3f-4d47-9ef4-ac64eb376bcd</UserSecretsId>
-		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
-		<DockerfileContext>..\..</DockerfileContext>
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.2" />
-	  <PackageReference Include="MudBlazor" Version="8.6.0" />
+		<PackageReference Include="MudBlazor" Version="8.6.0" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\..\aspire\Zortracks.PsInfo.ServiceDefaults\Zortracks.PsInfo.ServiceDefaults.csproj" />
-	  <ProjectReference Include="..\Zortracks.PsInfo.Landing.Models\Zortracks.PsInfo.Landing.Models.csproj" />
+		<ProjectReference Include="..\..\aspire\Zortracks.PsInfo.ServiceDefaults\Zortracks.PsInfo.ServiceDefaults.csproj" />
+		<ProjectReference Include="..\Zortracks.PsInfo.Landing.Models\Zortracks.PsInfo.Landing.Models.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Areas\Home\Resources\HomeLocalizations.Designer.cs">
-	    <DesignTime>True</DesignTime>
-	    <AutoGen>True</AutoGen>
-	    <DependentUpon>HomeLocalizations.resx</DependentUpon>
-	  </Compile>
-	  <Compile Update="Shared\Resources\NavMenuLocalizations.Designer.cs">
-	    <DesignTime>True</DesignTime>
-	    <AutoGen>True</AutoGen>
-	    <DependentUpon>NavMenuLocalizations.resx</DependentUpon>
-	  </Compile>
+		<Compile Update="Areas\Home\Resources\HomeLocalizations.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>HomeLocalizations.resx</DependentUpon>
+		</Compile>
+		<Compile Update="Shared\Resources\NavMenuLocalizations.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>NavMenuLocalizations.resx</DependentUpon>
+		</Compile>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <EmbeddedResource Update="Areas\Home\Resources\HomeLocalizations.resx">
-	    <Generator>PublicResXFileCodeGenerator</Generator>
-	    <LastGenOutput>HomeLocalizations.Designer.cs</LastGenOutput>
-	  </EmbeddedResource>
-	  <EmbeddedResource Update="Shared\Resources\NavMenuLocalizations.resx">
-	    <Generator>PublicResXFileCodeGenerator</Generator>
-	    <LastGenOutput>NavMenuLocalizations.Designer.cs</LastGenOutput>
-	  </EmbeddedResource>
+		<EmbeddedResource Update="Areas\Home\Resources\HomeLocalizations.resx">
+			<Generator>PublicResXFileCodeGenerator</Generator>
+			<LastGenOutput>HomeLocalizations.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Shared\Resources\NavMenuLocalizations.resx">
+			<Generator>PublicResXFileCodeGenerator</Generator>
+			<LastGenOutput>NavMenuLocalizations.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
 	</ItemGroup>
 
 </Project>

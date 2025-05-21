@@ -20,6 +20,7 @@
 		<ProjectReference Include="..\..\core\Zortracks.PsInfo.Core.Data.MigrationService\Zortracks.PsInfo.Core.Data.MigrationService.csproj" />
 		<ProjectReference Include="..\..\landing\Zortracks.PsInfo.Landing.Apis.Host\Zortracks.PsInfo.Landing.Apis.Host.csproj" />
 		<ProjectReference Include="..\..\landing\Zortracks.PsInfo.Landing.Application.Host\Zortracks.PsInfo.Landing.Application.Host.csproj" />
+		<ProjectReference Include="..\..\status\Zortracks.PsInfo.Status.Apis.Host\Zortracks.PsInfo.Status.Apis.Host.csproj" />
 		<ProjectReference Include="..\..\status\Zortracks.PsInfo.Status.PullingService\Zortracks.PsInfo.Status.PullingService.csproj" />
 	</ItemGroup>
 
