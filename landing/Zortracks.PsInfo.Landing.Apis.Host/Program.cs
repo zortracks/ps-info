@@ -17,7 +17,7 @@ namespace Zortracks.PsInfo.Landing.Apis.Host {
             builder.Services.AddControllers();
 
             // Database services
-            builder.AddSqlServerDbContext<PsInfoDbContext>("ps-info-database");
+            builder.AddSqlServerDbContext<LandingDbContext>("ps-info-database");
 
             /* ========= Build web application ========= */
             var app = builder.Build();

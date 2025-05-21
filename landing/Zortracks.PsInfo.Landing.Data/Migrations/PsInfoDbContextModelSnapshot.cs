@@ -10,7 +10,7 @@ using Zortracks.PsInfo.Landing.Data.DbContexts;
 
 namespace Zortracks.PsInfo.Data.Migrations
 {
-    [DbContext(typeof(PsInfoDbContext))]
+    [DbContext(typeof(LandingDbContext))]
     partial class PsInfoDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

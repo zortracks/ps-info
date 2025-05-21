@@ -7,9 +7,16 @@
         public static class Landing {
             public const string Apis = $"{LandingPrefix}apis";
             public const string Application = $"{LandingPrefix}application";
-            public const string Database = $"{LandingPrefix}-database";
+            public const string Database = $"{LandingPrefix}database";
 
             private const string LandingPrefix = "landing-";
+        }
+
+        public static class Status {
+            public const string PullingService = $"{StatusPrefix}pulling-service";
+            public const string Redis = $"{StatusPrefix}redis";
+
+            private const string StatusPrefix = "status-";
         }
     }
 }

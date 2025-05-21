@@ -9,6 +9,7 @@ namespace Zortracks.PsInfo.AppHost {
 
             Database.Configure(builder);
             Landing.Configure(builder);
+            Status.Configure(builder);
 
             builder.Build().Run();
         }

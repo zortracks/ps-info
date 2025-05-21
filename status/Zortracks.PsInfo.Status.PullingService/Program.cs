@@ -1,9 +1,8 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Zortracks.PsInfo.Landing.Data.DbContexts;
 using Zortracks.PsInfo.ServiceDefaults;
 
-namespace Zortracks.PsInfo.Core.Data.Migrations {
+namespace Zortracks.PsInfo.Status.PullingService {
 
     public static class Program {
 
@@ -16,10 +15,6 @@ namespace Zortracks.PsInfo.Core.Data.Migrations {
             builder.Services.Configure<HostOptions>(options => options.BackgroundServiceExceptionBehavior = BackgroundServiceExceptionBehavior.StopHost);
 
             // Worker services
-            builder.Services.AddHostedService<MigrationWorker>();
-
-            // Database services
-            builder.AddSqlServerDbContext<LandingDbContext>(ServiceNames.Landing.Database);
 
             /* ========= Build and run worker ========= */
             builder.Build().Run();

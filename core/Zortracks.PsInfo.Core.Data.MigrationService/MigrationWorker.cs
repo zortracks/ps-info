@@ -17,7 +17,7 @@ namespace Zortracks.PsInfo.Core.Data.Migrations {
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken) {
-            var database = _serviceProvider.CreateScope().ServiceProvider.GetRequiredService<PsInfoDbContext>();
+            var database = _serviceProvider.CreateScope().ServiceProvider.GetRequiredService<LandingDbContext>();
 
             await database.Database.CreateExecutionStrategy().ExecuteAsync(async () => {
                 if ((await database.Database.GetPendingMigrationsAsync(stoppingToken)).Any())

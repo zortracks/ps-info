@@ -11,7 +11,7 @@ using Zortracks.PsInfo.Landing.Data.DbContexts;
 
 namespace Zortracks.PsInfo.Data.Migrations
 {
-    [DbContext(typeof(PsInfoDbContext))]
+    [DbContext(typeof(LandingDbContext))]
     [Migration("20250520212245_AddContactRequestEntity")]
     partial class AddContactRequestEntity
     {

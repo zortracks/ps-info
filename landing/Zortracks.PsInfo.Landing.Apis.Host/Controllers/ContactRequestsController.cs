@@ -8,9 +8,9 @@ namespace Zortracks.PsInfo.Landing.Apis.Host.Controllers {
 
     [Route("contact-requests")]
     public sealed class ContactRequestsController : ControllerBase {
-        private readonly PsInfoDbContext _context;
+        private readonly LandingDbContext _context;
 
-        public ContactRequestsController(PsInfoDbContext context) {
+        public ContactRequestsController(LandingDbContext context) {
             _context = context;
         }
 
