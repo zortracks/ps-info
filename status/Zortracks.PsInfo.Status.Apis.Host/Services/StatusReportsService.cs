@@ -80,7 +80,7 @@ namespace Zortracks.PsInfo.Status.Apis.Host.Services {
             return projectEntity;
         }
 
-        private IQueryable<ProjectEntity> GetProjectEntities() => _context.Projects.Include(e => e.Entries.OrderByDescending(e => e.Issued).Take(20));
+        private IQueryable<ProjectEntity> GetProjectEntities() => _context.Projects.Include(e => e.Entries.Where(e => e.Issued < DateTime.UtcNow.AddDays(-10)).OrderByDescending(e => e.Issued));
 
         private ProjectEntity GetProjectEntity(string name) => GetProjectEntities().FirstOrDefault(e => e.Name == name);
     }
