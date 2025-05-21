@@ -1,23 +1,23 @@
 ﻿using Aspire.Hosting;
 using Aspire.Hosting.ApplicationModel;
+using Zortracks.PsInfo.ServiceDefaults;
 
 namespace Zortracks.PsInfo.AppHost {
 
     public static class Database {
-        public static IResourceBuilder<ProjectResource> DataMigrationResource { get; private set; }
-        public static IResourceBuilder<SqlServerServerResource> MsSqlServerResource { get; private set; }
-        public static IResourceBuilder<SqlServerDatabaseResource> PsInfoDatabaseResource { get; private set; }
+        public static IResourceBuilder<ProjectResource> DatabaseMigrationServiceResource { get; private set; }
+        public static IResourceBuilder<SqlServerServerResource> DatabaseServerResource { get; private set; }
 
         public static void Configure(IDistributedApplicationBuilder builder) {
-            MsSqlServerResource = builder.AddSqlServer("mssql-server")
+            DatabaseServerResource = builder.AddSqlServer(ServiceNames.DatabaseServer)
                 .WithDataVolume("mssql-server-data")
                 .WithLifetime(ContainerLifetime.Persistent);
 
-            PsInfoDatabaseResource = MsSqlServerResource.AddDatabase("ps-info-database", "ps-info");
-
-            DataMigrationResource = builder.AddProject<Projects.Zortracks_PsInfo_Data_Migrations>("ps-info-database-migrations")
-                //.WaitFor(PsInfoDatabaseResource)
-                .WithReference(PsInfoDatabaseResource);
+            DatabaseMigrationServiceResource = builder.AddProject<Projects.Zortracks_PsInfo_Core_Data_MigrationService>(ServiceNames.DatabaseMigrationService)
+                .WaitFor(Landing.LandingDatabaseResource)
+                .WithReference(Landing.LandingDatabaseResource)
+                .WaitFor(Status.StatusDatabaseResource)
+                .WithReference(Status.StatusDatabaseResource);
         }
     }
 }

@@ -11,13 +11,21 @@
 
 	<ItemGroup>
 		<PackageReference Include="Aspire.Hosting.AppHost" Version="9.3.0" />
+		<PackageReference Include="Aspire.Hosting.RabbitMQ" Version="9.3.0" />
 		<PackageReference Include="Aspire.Hosting.SqlServer" Version="9.3.0" />
+		<PackageReference Include="JsonFlatten" Version="1.0.4" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\..\src\Zortracks.PsInfo.Apis.Host\Zortracks.PsInfo.Apis.Host.csproj" />
-		<ProjectReference Include="..\..\src\Zortracks.PsInfo.Application.Host\Zortracks.PsInfo.Application.Host.csproj" />
-		<ProjectReference Include="..\..\src\Zortracks.PsInfo.Data.Migrations\Zortracks.PsInfo.Data.Migrations.csproj" />
+		<ProjectReference Include="..\..\core\Zortracks.PsInfo.Core.Data.MigrationService\Zortracks.PsInfo.Core.Data.MigrationService.csproj" />
+		<ProjectReference Include="..\..\landing\Zortracks.PsInfo.Landing.Apis.Host\Zortracks.PsInfo.Landing.Apis.Host.csproj" />
+		<ProjectReference Include="..\..\landing\Zortracks.PsInfo.Landing.Application.Host\Zortracks.PsInfo.Landing.Application.Host.csproj" />
+		<ProjectReference Include="..\..\status\Zortracks.PsInfo.Status.PullingService\Zortracks.PsInfo.Status.PullingService.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\status\Zortracks.PsInfo.Status.Models\Zortracks.PsInfo.Status.Models.csproj" IsAspireProjectResource="false" />
+		<ProjectReference Include="..\Zortracks.PsInfo.ServiceDefaults\Zortracks.PsInfo.ServiceDefaults.csproj" IsAspireProjectResource="false" />
 	</ItemGroup>
 
 </Project>

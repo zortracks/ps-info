@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<UserSecretsId>dotnet-Zortracks.PsInfo.Status.PullingService-307bbe5a-c43b-43a1-ac3c-1dcde7a7d430</UserSecretsId>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="AspNetCore.HealthChecks.SqlServer" Version="9.0.0" />
+		<PackageReference Include="CommunityToolkit.Aspire.MassTransit.RabbitMQ" Version="9.4.0" />
+		<PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.5" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\aspire\Zortracks.PsInfo.ServiceDefaults\Zortracks.PsInfo.ServiceDefaults.csproj" />
+	  <ProjectReference Include="..\Zortracks.PsInfo.Status.Models\Zortracks.PsInfo.Status.Models.csproj" />
+	</ItemGroup>
+</Project>
