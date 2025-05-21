@@ -13,6 +13,8 @@ namespace Zortracks.PsInfo.Application.Host.Areas.Contact.Pages {
 
         [Inject]
         public IHttpClientFactory HttpClientFactory { get; set; }
+        [Inject]
+        public ISnackbar Snackbar { get; set; }
 
         #endregion Injections
 
@@ -23,7 +25,7 @@ namespace Zortracks.PsInfo.Application.Host.Areas.Contact.Pages {
         #endregion Components
 
         #region Data
-
+        private bool IsLoading { get; set; }
         private ContactRequestModel ContactRequestModel { get; set; } = new ContactRequestModel();
 
         #endregion Data
@@ -34,8 +36,25 @@ namespace Zortracks.PsInfo.Application.Host.Areas.Contact.Pages {
             await Form.Validate();
 
             if (Form.IsValid) {
+                IsLoading = true;
+
                 var httpClient = HttpClientFactory.CreateClient("apis");
-                var response = await httpClient.PostAsJsonAsync("/contact-requests", ContactRequestModel);
+                var isSuccess = false;
+
+                try {
+                    var response = await httpClient.PostAsJsonAsync("/contact-requests", ContactRequestModel);
+
+                    isSuccess = response.IsSuccessStatusCode;
+                }
+                catch { isSuccess = false; }
+                finally {
+                    if (isSuccess)
+                        Snackbar.Add("Demande de contact envoyée.", Severity.Success);
+                    else
+                        Snackbar.Add("Echec de l'envoie de la demande de contact.", Severity.Error);
+
+                    IsLoading = false;
+                }
             }
         }
 
