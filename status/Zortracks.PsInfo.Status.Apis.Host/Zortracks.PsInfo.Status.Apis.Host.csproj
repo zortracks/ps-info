@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Aspire.MassTransit.RabbitMQ" Version="9.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\aspire\Zortracks.PsInfo.ServiceDefaults\Zortracks.PsInfo.ServiceDefaults.csproj" />
+    <ProjectReference Include="..\Zortracks.PsInfo.Status.Models\Zortracks.PsInfo.Status.Models.csproj" />
+  </ItemGroup>
+
+</Project>
