@@ -13,6 +13,7 @@
 		<PackageReference Include="Aspire.Hosting.AppHost" Version="9.3.0" />
 		<PackageReference Include="Aspire.Hosting.Redis" Version="9.3.0" />
 		<PackageReference Include="Aspire.Hosting.SqlServer" Version="9.3.0" />
+		<PackageReference Include="JsonFlatten" Version="1.0.4" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -23,6 +24,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\..\status\Zortracks.PsInfo.Status.Models\Zortracks.PsInfo.Status.Models.csproj" IsAspireProjectResource="false" />
 		<ProjectReference Include="..\Zortracks.PsInfo.ServiceDefaults\Zortracks.PsInfo.ServiceDefaults.csproj" IsAspireProjectResource="false" />
 	</ItemGroup>
 
