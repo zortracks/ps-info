@@ -15,8 +15,7 @@
         public static class Status {
             public const string Database = $"{StatusPrefix}database";
             public const string PullingService = $"{StatusPrefix}pulling-service";
-            public const string PullingServiceParameter = $"{PullingService}-parameter";
-            public const string Redis = $"{StatusPrefix}redis";
+            public const string RabbitMQ = $"{StatusPrefix}rabbitmq";
 
             private const string StatusPrefix = "status-";
         }

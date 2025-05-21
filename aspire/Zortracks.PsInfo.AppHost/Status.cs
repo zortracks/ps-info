@@ -1,6 +1,7 @@
 ﻿using Aspire.Hosting;
 using Aspire.Hosting.ApplicationModel;
 using JsonFlatten;
+using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Linq;
@@ -13,16 +14,21 @@ namespace Zortracks.PsInfo.AppHost {
         private static IResourceBuilder<SqlServerDatabaseResource> _statusDatabaseResource;
 
         public static IResourceBuilder<ProjectResource> PullingServiceResource { get; private set; }
-        public static IResourceBuilder<RedisResource> RedisResource { get; private set; }
+        public static IResourceBuilder<RabbitMQServerResource> RabbitMQResource { get; private set; }
         public static IResourceBuilder<SqlServerDatabaseResource> StatusDatabaseResource { get => _statusDatabaseResource ??= Database.DatabaseServerResource.AddDatabase(ServiceNames.Status.Database, "status"); }
 
         public static void Configure(IDistributedApplicationBuilder builder) {
-            RedisResource = builder.AddRedis(ServiceNames.Status.Redis);
+            RabbitMQResource = builder.AddRabbitMQ(ServiceNames.Status.RabbitMQ);
+
+            if (builder.Environment.IsDevelopment())
+                RabbitMQResource = RabbitMQResource.WithManagementPlugin();
+
+            RabbitMQResource = RabbitMQResource.WithLifetime(ContainerLifetime.Persistent);
 
             PullingServiceResource = builder.AddProject<Projects.Zortracks_PsInfo_Status_PullingService>(ServiceNames.Status.PullingService)
                 // Working references
-                .WaitFor(RedisResource)
-                .WithReference(RedisResource)
+                .WaitFor(RabbitMQResource)
+                .WithReference(RabbitMQResource)
 
                 // Status references
                 .WithReference(Landing.LandingDatabaseResource)

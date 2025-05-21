@@ -17,7 +17,9 @@ namespace Zortracks.PsInfo.Status.PullingService {
             // Core services
             builder.AddServiceDefaults();
             builder.Services.Configure<HostOptions>(options => options.BackgroundServiceExceptionBehavior = BackgroundServiceExceptionBehavior.StopHost);
-            builder.AddRedisOutputCache(ServiceNames.Status.Redis);
+            builder.AddMassTransitRabbitMq(ServiceNames.Status.RabbitMQ, massTransitConfiguration: configure => {
+
+            });
 
             // Health check services
             builder.Services.AddSingleton<IHealthCheckPublisher, RedisHealthCheckPublisher>();
