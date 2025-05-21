@@ -8,8 +8,7 @@ namespace Zortracks.PsInfo.AppHost {
             var builder = DistributedApplication.CreateBuilder(args);
 
             Database.Configure(builder);
-            Apis.Configure(builder);
-            Application.Configure(builder);
+            Landing.Configure(builder);
 
             builder.Build().Run();
         }
