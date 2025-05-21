@@ -3,9 +3,11 @@
 @using Microsoft.AspNetCore.Components.Web
 @using MudBlazor
 
-<MudText Class="mt-16 mb-10" Typo="Typo.h2" Align="Align.Center">Services</MudText>
+<MudContainer Class="py-20">
+    <MudText Typo="Typo.h2" Align="Align.Center">Services</MudText>
 
-<MudContainer>
+    <MudDivider Class="my-16" />
+
     <MudGrid>
         <MudItem xs="12" md="4">
             <MudCard Outlined>
@@ -111,7 +113,7 @@
         </MudItem>
     </MudGrid>
 
-    <MudDivider Class="my-16" DividerType="DividerType.Middle" />
+    <MudDivider Class="my-16" />
 
     <MudPaper Outlined>
         <MudStack Row>
@@ -128,7 +130,7 @@
                 <MudStack Class="pa-3" AlignItems="AlignItems.End">
                     <MudStack Row>
                         <MudButton Href="tel:+262693484534" StartIcon="@Icons.Material.Filled.Phone" Color="Color.Primary">Par téléphone</MudButton>
-                        <MudButton Href="/support" StartIcon="@Icons.Material.Filled.Support" Color="Color.Primary">Centre de support</MudButton>
+                        <MudButton Href="https://support.ps-info.ddns.net/" Target="_blank" StartIcon="@Icons.Material.Filled.Support" Color="Color.Primary">Centre de support</MudButton>
                     </MudStack>
                 </MudStack>
             </MudStack>
