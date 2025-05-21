@@ -20,6 +20,7 @@ namespace Zortracks.PsInfo.Status.PullingService {
         }
 
         public async Task PublishAsync(HealthReport report, CancellationToken cancellationToken) {
+            var issued = DateTime.UtcNow;
             var serviceProvider = _serviceProvider.CreateScope().ServiceProvider;
             var publishEndpoint = serviceProvider.GetRequiredService<IPublishEndpoint>();
 
@@ -27,7 +28,8 @@ namespace Zortracks.PsInfo.Status.PullingService {
                 await publishEndpoint.Publish(new StatusReport() {
                     Name = status.Key,
                     Status = status.Value.Status,
-                    Duration = status.Value.Duration
+                    Duration = status.Value.Duration,
+                    Issued = issued
                 }, cancellationToken);
         }
     }

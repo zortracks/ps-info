@@ -7,5 +7,6 @@ namespace Zortracks.PsInfo.Status.Models {
         public TimeSpan Duration { get; set; }
         public string Name { get; set; }
         public HealthStatus Status { get; set; }
+        public DateTime Issued { get; set; }
     }
 }
