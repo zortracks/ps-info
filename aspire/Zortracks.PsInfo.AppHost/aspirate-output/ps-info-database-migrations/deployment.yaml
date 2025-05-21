@@ -22,7 +22,7 @@ spec:
       - name: image-pull-secret
       containers:
       - name: ps-info-database-migrations
-        image: registry.versonium.cloud/ps-info/ps-info-database-migrations:v0.1.4
+        image: registry.versonium.cloud/ps-info/ps-info-database-migrations:v1.0.0
         imagePullPolicy: IfNotPresent
         envFrom:
         - configMapRef:
