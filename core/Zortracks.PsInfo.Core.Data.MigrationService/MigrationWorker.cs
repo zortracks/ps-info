@@ -5,11 +5,10 @@ using System;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Zortracks.PsInfo.Landing.Data.DbContexts;
 
 namespace Zortracks.PsInfo.Core.Data.Migrations {
 
-    public sealed class MigrationWorker : BackgroundService {
+    public sealed class MigrationWorker<TDbContext> : BackgroundService where TDbContext : DbContext {
         private readonly IServiceProvider _serviceProvider;
 
         public MigrationWorker(IServiceProvider serviceProvider) {
@@ -17,7 +16,7 @@ namespace Zortracks.PsInfo.Core.Data.Migrations {
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken) {
-            var database = _serviceProvider.CreateScope().ServiceProvider.GetRequiredService<LandingDbContext>();
+            var database = _serviceProvider.CreateScope().ServiceProvider.GetRequiredService<TDbContext>();
 
             await database.Database.CreateExecutionStrategy().ExecuteAsync(async () => {
                 if ((await database.Database.GetPendingMigrationsAsync(stoppingToken)).Any())

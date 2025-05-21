@@ -16,7 +16,7 @@ namespace Zortracks.PsInfo.Core.Data.Migrations {
             builder.Services.Configure<HostOptions>(options => options.BackgroundServiceExceptionBehavior = BackgroundServiceExceptionBehavior.StopHost);
 
             // Worker services
-            builder.Services.AddHostedService<MigrationWorker>();
+            builder.Services.AddHostedService<MigrationWorker<LandingDbContext>>();
 
             // Database services
             builder.AddSqlServerDbContext<LandingDbContext>(ServiceNames.Landing.Database);
