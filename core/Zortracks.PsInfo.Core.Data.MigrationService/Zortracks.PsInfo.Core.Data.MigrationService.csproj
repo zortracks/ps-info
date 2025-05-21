@@ -12,5 +12,6 @@
 	<ItemGroup>
 		<ProjectReference Include="..\..\aspire\Zortracks.PsInfo.ServiceDefaults\Zortracks.PsInfo.ServiceDefaults.csproj" />
 		<ProjectReference Include="..\..\landing\Zortracks.PsInfo.Landing.Data\Zortracks.PsInfo.Landing.Data.csproj" />
+		<ProjectReference Include="..\..\status\Zortracks.PsInfo.Status.Data\Zortracks.PsInfo.Status.Data.csproj" />
 	</ItemGroup>
 </Project>

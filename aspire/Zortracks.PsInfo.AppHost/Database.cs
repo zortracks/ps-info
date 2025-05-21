@@ -15,7 +15,9 @@ namespace Zortracks.PsInfo.AppHost {
 
             DatabaseMigrationServiceResource = builder.AddProject<Projects.Zortracks_PsInfo_Core_Data_MigrationService>(ServiceNames.DatabaseMigrationService)
                 .WaitFor(Landing.LandingDatabaseResource)
-                .WithReference(Landing.LandingDatabaseResource);
+                .WithReference(Landing.LandingDatabaseResource)
+                .WaitFor(Status.StatusDatabaseResource)
+                .WithReference(Status.StatusDatabaseResource);
         }
     }
 }
